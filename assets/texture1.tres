@@ -1,0 +1,14 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=2]
+
+[ext_resource path="res://Images/—Pngtree—picture frame cartoon picture frame_3855785.png" type="Texture" id=1]
+
+[resource]
+texture = ExtResource( 1 )
+normal_map = ExtResource( 1 )
+region_rect = Rect2( 603, 401, 1893, 1365 )
+margin_left = 72.0
+margin_right = 55.923
+margin_top = 131.819
+margin_bottom = 127.824
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
