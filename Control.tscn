@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://assets/texture1.tres" type="StyleBox" id=1]
 [ext_resource path="res://fonts/Xolonium-Regular.ttf" type="DynamicFontData" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://Control.gd" type="Script" id=4]
 [ext_resource path="res://assets/new_styleboxline.tres" type="StyleBox" id=5]
 [ext_resource path="res://assets/texture2.tres" type="StyleBox" id=6]
+
+[sub_resource type="Theme" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
@@ -15,7 +17,7 @@ font_data = ExtResource( 2 )
 size = 60
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=3]
 font_data = ExtResource( 2 )
 
 [node name="Control" type="Control"]
@@ -82,6 +84,8 @@ __meta__ = {
 modulate = Color( 1, 1, 1, 0 )
 margin_right = 279.0
 margin_bottom = 96.0
+theme = SubResource( 4 )
+custom_constants/hseparation = 5
 
 [node name="Label" type="Label" parent="Panel/MarginContainer"]
 margin_top = 17.0
@@ -131,9 +135,10 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="Panel2/MarginContainer"]
+margin_top = 33.0
 margin_right = 106.0
-margin_bottom = 88.0
-custom_fonts/font = SubResource( 6 )
+margin_bottom = 53.0
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Heyyy"
 align = 1
@@ -162,19 +167,16 @@ margin_right = 244.0
 margin_bottom = 160.0
 
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
-margin_left = 284.397
-margin_top = 235.308
-margin_right = 693.397
-margin_bottom = 493.308
+margin_left = 274.295
+margin_top = 238.675
+margin_right = 683.295
+margin_bottom = 496.675
+resizable = true
+dialog_text = "Hello"
+dialog_autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="WindowDialog" type="WindowDialog" parent="."]
-margin_left = 280.324
-margin_top = 264.311
-margin_right = 691.324
-margin_bottom = 472.311
 
 [node name="Timer" type="Timer" parent="."]
 process_mode = 0
@@ -185,12 +187,34 @@ autostart = true
 margin_right = 40.0
 margin_bottom = 40.0
 
-[node name="Timer2" type="Timer" parent="."]
-wait_time = 5.0
-one_shot = true
-autostart = true
+[node name="Panel4" type="Panel" parent="."]
+visible = false
+margin_left = 302.0
+margin_top = 244.0
+margin_right = 692.0
+margin_bottom = 506.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FileDialog" type="FileDialog" parent="."]
+margin_left = 722.234
+margin_top = 355.746
+margin_right = 1037.23
+margin_bottom = 485.746
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WindowDialog" type="WindowDialog" parent="."]
+margin_left = 722.0
+margin_top = 356.0
+margin_right = 1006.0
+margin_bottom = 458.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="pressed" from="Panel/MarginContainer/Button" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Panel3/MarginContainer/Button2" to="." method="_on_Button2_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
-[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
